@@ -33,7 +33,7 @@ def search(q: str = Query(..., min_length=2)):
                         value=price["value"],
                         currency=price["currency"],
                     ),
-                    image=p["small_image"]["url"],
+                    image=p.get("small_image", {}).get("url"),
                     url=f"https://cmiestore.com/{p['url_key']}{p['url_suffix']}",
                     description=strip_html(p["description"]["html"]),
                 )

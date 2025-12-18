@@ -15,6 +15,9 @@ query ($search: String!) {
       description {
         html
       }
+      short_description {
+        html
+      }
       small_image {
         url
         label
